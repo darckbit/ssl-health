@@ -1,0 +1,27 @@
+
+# Import Parent
+import test
+
+from testresult import TestResult
+
+import pytz
+utc=pytz.UTC
+from dateutil import parser
+import datetime
+
+#ValidityTest
+class Test(test.Test):
+	"""docstring for ClassName"""
+	def __init__(self):
+		self.name = "OCSP Check"
+		self.weight = 0
+		self.required= False
+		
+	# Test
+	def performTest(self, scanResult): 
+		if scanResult.ocspResult:
+			return TestResult(self, True, "OCSP is supported and delivered no error.")
+		return TestResult(self, False, "OCSP is unsupported.")
+			
+
+
