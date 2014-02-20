@@ -31,5 +31,5 @@ class Service():
 		self.scanResult = ScanResult(self);
 		if self.scanResult.parseFromFile(fullFilePath) == False:
 			self.scanResult = None
-		#os.unlink(fullFilePath)
+		os.unlink(fullFilePath)
 		
