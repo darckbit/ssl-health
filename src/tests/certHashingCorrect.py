@@ -17,7 +17,7 @@ class Test(test.Test):
 		# Perform a test.
 		if scanResult.signatureAlgorithm == "md5WithRSAEncryption":
 			# Testresults needs a test.
-			return TestResult(self, False, "Hashing considerate insecure")
+			return TestResult(self, False, "Hashing considered insecure")
 		return TestResult(self, True, "Hashing considerate secure")
 
 
